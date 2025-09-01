@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EcoRruga Services — Road Cleaning • Waste • Drainage • Snow</title>
+  <meta name="description" content="EcoRruga Services provides professional road cleaning, garbage disposal, drainage maintenance, and snow removal. Licensed & insured. Based in Ferizaj, Kosovo." />
+  <meta name="theme-color" content="#0C4DA2" />
+  <meta property="og:title" content="EcoRruga Services" />
+  <meta property="og:description" content="Reliable, sustainable city services for roads, waste, drainage, and snow removal." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="logo.png" />
+  <link rel="icon" href="logo.png" />
+  <style>
+    :root{
+      --blue:#0C4DA2; /* brand deep blue */
+      --yellow:#F2C700; /* brand yellow/gold */
+      --ink:#0F172A; /* slate-900 */
+      --muted:#475569; /* slate-600 */
+      --bg:#F8FAFC; /* slate-50 */
+      --card:#FFFFFF;
+      --ring: rgba(12,77,162,.25);
+      --shadow: 0 10px 25px rgba(2,6,23,.08);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Inter",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    img{max-width:100%;height:auto;display:block}
+    .container{width:min(1200px,92vw);margin-inline:auto}
+    .btn{appearance:none;border:0;border-radius:999px;padding:.9rem 1.25rem;font-weight:700;cursor:pointer;transition:.2s;letter-spacing:.2px}
+    .btn-primary{background:var(--blue);color:#fff;box-shadow:0 6px 16px rgba(12,77,162,.25)}
+    .btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(12,77,162,.3)}
+    .btn-outline{background:transparent;border:2px solid var(--blue);color:var(--blue)}
+    .badge{display:inline-flex;gap:.5rem;align-items:center;padding:.45rem .75rem;border-radius:999px;background:#EAF3FF;color:var(--blue);font-weight:600;font-size:.9rem}
+
+    /* Header */
+    header{position:sticky;top:0;background:#ffffffe6;backdrop-filter:saturate(180%) blur(8px);z-index:50;border-bottom:1px solid #e5e7eb}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0}
+    .brand{display:flex;align-items:center;gap:.75rem}
+    .brand img{width:42px;height:42px;border-radius:10px}
+    .brand h1{font-size:1.05rem;margin:0;font-weight:800;letter-spacing:.3px}
+    nav a{margin-left:1rem;text-decoration:none;color:#0f172acc;font-weight:600}
+    nav a:hover{color:var(--blue)}
+    .lang{display:flex;gap:.5rem;align-items:center}
+    .lang button{border:none;background:#F1F5F9;border-radius:999px;padding:.4rem .7rem;font-weight:700;cursor:pointer}
+    .lang button.active{background:var(--blue);color:#fff}
+
+    /* Hero */
+    .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--blue),#123e7a);color:#fff}
+    .hero::after{content:'';position:absolute;inset:-30% -20% auto auto;width:70vmax;height:70vmax;background:radial-gradient(circle at 30% 30%,rgba(242,199,0,.35),transparent 60%);filter:blur(10px);}
+    .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;padding:clamp(3rem,6vw,6rem) 0}
+    .hero h2{font-size:clamp(2rem,4vw,3rem);margin:0 0 .8rem;font-weight:900}
+    .hero p{max-width:56ch;margin:0 0 1.2rem;color:#e6eefc}
+    .hero-cta{display:flex;gap:.75rem;flex-wrap:wrap}
+    .statbar{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.25rem}
+    .stat{background:#0b3572;border:1px solid #1f4e96;color:#dbeafe;padding:.75rem 1rem;border-radius:var(--radius);box-shadow:var(--shadow)}
+
+    /* Sections */
+    section{padding:clamp(2.5rem,6vw,4.5rem) 0}
+    .section-title{font-size:clamp(1.6rem,3.2vw,2rem);margin:0 0 1rem}
+    .muted{color:var(--muted)}
+
+    /* Services */
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:var(--radius);padding:1.1rem;box-shadow:var(--shadow);transition:.2s}
+    .card:hover{transform:translateY(-2px)}
+    .card h3{margin:.2rem 0 .3rem}
+    .pill{display:inline-block;background:#FEF3C7;color:#92400E;border:1px solid #F59E0B;padding:.25rem .6rem;border-radius:999px;font-size:.8rem;font-weight:700}
+    .card ul{margin:.6rem 0 0;padding-left:1rem}
+
+    /* Two-column */
+    .grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:1.2rem;align-items:center}
+
+    /* Table */
+    table{width:100%;border-collapse:collapse;border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+    th,td{padding:.8rem;border-bottom:1px solid #e5e7eb}
+    th{background:#f8fafc;text-align:left}
+
+    /* Footer */
+    footer{background:#0b1b33;color:#c7d2fe}
+    footer a{color:#93c5fd;text-decoration:none}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-inner{grid-template-columns:1fr}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .grid-2{grid-template-columns:1fr}
+      nav{display:none}
+    }
+    @media (max-width: 560px){
+      .cards{grid-template-columns:1fr}
+      .brand h1{display:none}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="logo.png" alt="EcoRruga logo" />
+        <h1>EcoRruga Services</h1>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#compliance" data-i18n="nav.compliance">Compliance</a>
+        <a href="#schedule" data-i18n="nav.schedule">Schedule</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="lang" aria-label="Language selector">
+        <button class="i18n-switch active" data-lang="en">EN</button>
+        <button class="i18n-switch" data-lang="sq">SQ</button>
+        <a class="btn btn-primary" href="#contact" data-i18n="cta.rfp">Request Proposal</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <span class="badge" aria-label="Licensed & Insured"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l7 4v6c0 5-3.5 9.5-7 10-3.5-.5-7-5-7-10V6l7-4z" stroke="currentColor" stroke-width="1.6"/><path d="M8 11l2.5 2.5L16 8" stroke="currentColor" stroke-width="1.8"/></svg>
+          <span data-i18n="hero.badge">Licensed • Insured • Eco‑Focused</span>
+        </span>
+        <h2 data-i18n="hero.title">Keeping Cities Clean, Safe & Sustainable</h2>
+        <p data-i18n="hero.subtitle">Professional road cleaning, waste collection, drainage maintenance, and snow removal for municipalities and large facilities.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact" data-i18n="cta.rfp">Request Proposal</a>
+          <a class="btn btn-outline" href="#services" data-i18n="cta.viewServices">View Services</a>
+        </div>
+        <div class="statbar" aria-label="Key highlights">
+          <div class="stat" data-i18n="stats.fast">24/7 Rapid Response</div>
+          <div class="stat" data-i18n="stats.coverage">City‑wide Coverage</div>
+          <div class="stat" data-i18n="stats.safety">Safety‑First Operations</div>
+        </div>
+      </div>
+      <div>
+        <img src="hero-illustration.svg" alt="EcoRruga fleet illustration" onerror="this.style.display='none'"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="container">
+    <h2 class="section-title" data-i18n="services.title">Services</h2>
+    <p class="muted" data-i18n="services.lead">Clear, dependable solutions tailored for municipal performance and public safety.</p>
+    <div class="cards" role="list">
+      <article class="card" role="listitem">
+        <span class="pill" data-i18n="services.road.badge">Road Cleaning</span>
+        <h3 data-i18n="services.road.title">Street Sweeping & Debris Control</h3>
+        <ul>
+          <li data-i18n="services.road.li1">High‑capacity sweepers reduce dust and pollution</li>
+          <li data-i18n="services.road.li2">Rapid response for events and construction sites</li>
+          <li data-i18n="services.road.li3">Routine, on‑schedule maintenance</li>
+        </ul>
+      </article>
+      <article class="card" role="listitem">
+        <span class="pill" data-i18n="services.waste.badge">Garbage Disposal</span>
+        <h3 data-i18n="services.waste.title">Collection & Sustainable Disposal</h3>
+        <ul>
+          <li data-i18n="services.waste.li1">Municipal routes and bulk pick‑ups</li>
+          <li data-i18n="services.waste.li2">Tracked loads • chain‑of‑custody</li>
+          <li data-i18n="services.waste.li3">Recycling alignment where applicable</li>
+        </ul>
+      </article>
+      <article class="card" role="listitem">
+        <span class="pill" data-i18n="services.drain.badge">Drainage Cleaning</span>
+        <h3 data-i18n="services.drain.title">Storm Drains & Culverts</h3>
+        <ul>
+          <li data-i18n="services.drain.li1">Prevent flooding with scheduled clearing</li>
+          <li data-i18n="services.drain.li2">Vacuum trucks & hydro‑jetting</li>
+          <li data-i18n="services.drain.li3">Inspection & reporting</li>
+        </ul>
+      </article>
+      <article class="card" role="listitem">
+        <span class="pill" data-i18n="services.snow.badge">Snow Removal</span>
+        <h3 data-i18n="services.snow.title">Plowing, Salting & Sidewalks</h3>
+        <ul>
+          <li data-i18n="services.snow.li1">24/7 winter operations</li>
+          <li data-i18n="services.snow.li2">Priority routes for safety</li>
+          <li data-i18n="services.snow.li3">Eco‑conscious de‑icing options</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="container grid-2">
+    <div>
+      <h2 class="section-title" data-i18n="about.title">About EcoRruga</h2>
+      <p class="muted" data-i18n="about.p1">We partner with cities and large facilities to deliver reliable, scalable field operations. Our teams are trained, vetted, and equipped to meet strict public‑sector standards.</p>
+      <p class="muted" data-i18n="about.p2">Headquartered in Ferizaj, Kosovo, we operate with transparency, modern fleet telemetry, and environmental responsibility at the core of every job.</p>
+      <div class="statbar">
+        <div class="stat" data-i18n="about.kpi1">Licensed & Insured</div>
+        <div class="stat" data-i18n="about.kpi2">Safety‑Certified Crews</div>
+        <div class="stat" data-i18n="about.kpi3">RFP‑Ready Documentation</div>
+      </div>
+    </div>
+    <div>
+      <img src="team-fleet.jpg" alt="EcoRruga team and fleet" style="border-radius:var(--radius);box-shadow:var(--shadow)" onerror="this.style.display='none'"/>
+    </div>
+  </section>
+
+  <!-- Compliance -->
+  <section id="compliance" class="container">
+    <h2 class="section-title" data-i18n="compliance.title">Compliance & Capabilities</h2>
+    <div class="cards" style="grid-template-columns:repeat(3,1fr)">
+      <article class="card">
+        <h3 data-i18n="compliance.docs">Documentation</h3>
+        <ul>
+          <li data-i18n="compliance.li1">Business Registration & Tax Certificates</li>
+          <li data-i18n="compliance.li2">Insurance: General Liability & Fleet</li>
+          <li data-i18n="compliance.li3">Health & Safety Program (HSE)</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3 data-i18n="compliance.fleet">Fleet & Equipment</h3>
+        <ul>
+          <li data-i18n="compliance.li4">Sweepers • Vacuum Trucks • Plows</li>
+          <li data-i18n="compliance.li5">Salt spreaders • Hydro‑jetting</li>
+          <li data-i18n="compliance.li6">GPS & maintenance logs</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3 data-i18n="compliance.process">Process & Reporting</h3>
+        <ul>
+          <li data-i18n="compliance.li7">SLA‑based scheduling</li>
+          <li data-i18n="compliance.li8">Daily field reports & photos</li>
+          <li data-i18n="compliance.li9">Incident response protocols</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Schedule -->
+  <section id="schedule" class="container">
+    <h2 class="section-title" data-i18n="schedule.title">Operating Schedule</h2>
+    <p class="muted" data-i18n="schedule.lead">Our standard weekly plan (custom schedules available for contracts and events).</p>
+    <div style="overflow:auto">
+      <table aria-label="Weekly operating schedule">
+        <thead>
+          <tr>
+            <th data-i18n="schedule.day">Day</th>
+            <th data-i18n="schedule.hours">Hours</th>
+            <th data-i18n="schedule.focus">Primary Focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td data-i18n="days.mon">Monday</td><td>06:00–22:00</td><td data-i18n="focus.road">Road Cleaning Routes</td></tr>
+          <tr><td data-i18n="days.tue">Tuesday</td><td>06:00–22:00</td><td data-i18n="focus.waste">Garbage Collection</td></tr>
+          <tr><td data-i18n="days.wed">Wednesday</td><td>06:00–22:00</td><td data-i18n="focus.drain">Drainage Maintenance</td></tr>
+          <tr><td data-i18n="days.thu">Thursday</td><td>06:00–22:00</td><td data-i18n="focus.mixed">Mixed Operations</td></tr>
+          <tr><td data-i18n="days.fri">Friday</td><td>06:00–22:00</td><td data-i18n="focus.events">Event/Construction Support</td></tr>
+          <tr><td data-i18n="days.sat">Saturday</td><td>On‑Call</td><td data-i18n="focus.oncall">On‑Call & Overflow</td></tr>
+          <tr><td data-i18n="days.sun">Sunday</td><td>On‑Call</td><td data-i18n="focus.readiness">Readiness & Fleet Service</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container grid-2">
+    <div>
+      <h2 class="section-title" data-i18n="contact.title">Request a Proposal</h2>
+      <p class="muted" data-i18n="contact.lead">Tell us about your scope and timelines. We’ll reply with a tailored plan and pricing.</p>
+      <form id="rfpForm" class="card" style="padding:1.25rem" aria-label="Request for proposal form">
+        <label>
+          <span data-i18n="form.name">Full Name</span><br />
+          <input name="name" required placeholder="Jane Doe" style="width:100%;padding:.75rem;border:1px solid #e5e7eb;border-radius:10px;outline:2px solid transparent" />
+        </label><br /><br />
+        <label>
+          <span data-i18n="form.email">Email</span><br />
+          <input type="email" name="email" required placeholder="procurement@city.gov" style="width:100%;padding:.75rem;border:1px solid #e5e7eb;border-radius:10px;outline:2px solid transparent" />
+        </label><br /><br />
+        <label>
+          <span data-i18n="form.scope">Scope / Notes</span><br />
+          <textarea name="notes" rows="5" required placeholder="Street sweeping for 12 municipal districts, winter coverage from Nov–Mar…" style="width:100%;padding:.75rem;border:1px solid #e5e7eb;border-radius:10px;resize:vertical"></textarea>
+        </label><br /><br />
+        <div style="display:flex;gap:.6rem;align-items:center">
+          <button class="btn btn-primary" type="submit" data-i18n="form.submit">Send Request</button>
+          <span id="formStatus" class="muted" role="status" aria-live="polite"></span>
+        </div>
+        <input type="hidden" name="meta" value="EcoRruga Website RFP" />
+      </form>
+      <p class="muted" style="margin-top:.75rem" data-i18n="contact.privacy">By submitting, you consent to being contacted about your request. We respect your privacy.</p>
+    </div>
+    <div>
+      <div class="card">
+        <h3 style="margin-top:0" data-i18n="contact.company">Company</h3>
+        <p><strong>EcoRruga Services</strong><br />Ferizaj, Kosovo</p>
+        <p><span class="muted" data-i18n="contact.email">Email</span>: <a href="mailto:GreenKos@gmail.com">GreenKos@gmail.com</a></p>
+        <p class="muted" data-i18n="contact.update">(Additional contact details to be added.)</p>
+        <hr style="border:none;border-top:1px solid #e5e7eb;margin:1rem 0" />
+        <p data-i18n="contact.pitch">Looking for a reliable partner for municipal services? We’re ready to support your RFP.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;padding:1.1rem 0">
+      <p style="margin:0">© <span id="year"></span> EcoRruga Services. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <p style="margin:0"><a href="#" onclick="alert('Coming soon');return false;" data-i18n="footer.docs">Download Capabilities Statement (PDF)</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple form handler (placeholder). Replace with real endpoint later.
+    document.getElementById('rfpForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      status.textContent = 'Sending…';
+      setTimeout(()=>{
+        status.textContent = 'Thank you — your request has been logged.';
+        this.reset();
+      }, 700);
+    });
+
+    // Intersection Observer animation (subtle reveal)
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(el => {
+        if (el.isIntersecting){
+          el.target.animate([
+            {opacity:0, transform:'translateY(10px)'},
+            {opacity:1, transform:'translateY(0)'}
+          ], {duration:500, easing:'ease-out', fill:'forwards'});
+          observer.unobserve(el.target);
+        }
+      })
+    }, {threshold: .08});
+    document.querySelectorAll('section .card, section h2, section p, .stat').forEach(el=>observer.observe(el));
+
+    // Lightweight i18n (English / Albanian)
+    const dict = {
+      en: {
+        'nav.services':'Services','nav.about':'About','nav.compliance':'Compliance','nav.schedule':'Schedule','nav.contact':'Contact',
+        'cta.rfp':'Request Proposal','cta.viewServices':'View Services',
+        'hero.badge':'Licensed • Insured • Eco‑Focused',
+        'hero.title':'Keeping Cities Clean, Safe & Sustainable',
+        'hero.subtitle':'Professional road cleaning, waste collection, drainage maintenance, and snow removal for municipalities and large facilities.',
+        'stats.fast':'24/7 Rapid Response','stats.coverage':'City‑wide Coverage','stats.safety':'Safety‑First Operations',
+        'services.title':'Services','services.lead':'Clear, dependable solutions tailored for municipal performance and public safety.',
+        'services.road.badge':'Road Cleaning','services.road.title':'Street Sweeping & Debris Control','services.road.li1':'High‑capacity sweepers reduce dust and pollution','services.road.li2':'Rapid response for events and construction sites','services.road.li3':'Routine, on‑schedule maintenance',
+        'services.waste.badge':'Garbage Disposal','services.waste.title':'Collection & Sustainable Disposal','services.waste.li1':'Municipal routes and bulk pick‑ups','services.waste.li2':'Tracked loads • chain‑of‑custody','services.waste.li3':'Recycling alignment where applicable',
+        'services.drain.badge':'Drainage Cleaning','services.drain.title':'Storm Drains & Culverts','services.drain.li1':'Prevent flooding with scheduled clearing','services.drain.li2':'Vacuum trucks & hydro‑jetting','services.drain.li3':'Inspection & reporting',
+        'services.snow.badge':'Snow Removal','services.snow.title':'Plowing, Salting & Sidewalks','services.snow.li1':'24/7 winter operations','services.snow.li2':'Priority routes for safety','services.snow.li3':'Eco‑conscious de‑icing options',
+        'about.title':'About EcoRruga','about.p1':'We partner with cities and large facilities to deliver reliable, scalable field operations. Our teams are trained, vetted, and equipped to meet strict public‑sector standards.',
+        'about.p2':'Headquartered in Ferizaj, Kosovo, we operate with transparency, modern fleet telemetry, and environmental responsibility at the core of every job.',
+        'about.kpi1':'Licensed & Insured','about.kpi2':'Safety‑Certified Crews','about.kpi3':'RFP‑Ready Documentation',
+        'compliance.title':'Compliance & Capabilities','compliance.docs':'Documentation','compliance.fleet':'Fleet & Equipment','compliance.process':'Process & Reporting',
+        'compliance.li1':'Business Registration & Tax Certificates','compliance.li2':'Insurance: General Liability & Fleet','compliance.li3':'Health & Safety Program (HSE)','compliance.li4':'Sweepers • Vacuum Trucks • Plows','compliance.li5':'Salt spreaders • Hydro‑jetting','compliance.li6':'GPS & maintenance logs','compliance.li7':'SLA‑based scheduling','compliance.li8':'Daily field reports & photos','compliance.li9':'Incident response protocols',
+        'schedule.title':'Operating Schedule','schedule.lead':'Our standard weekly plan (custom schedules available for contracts and events).','schedule.day':'Day','schedule.hours':'Hours','schedule.focus':'Primary Focus',
+        'days.mon':'Monday','days.tue':'Tuesday','days.wed':'Wednesday','days.thu':'Thursday','days.fri':'Friday','days.sat':'Saturday','days.sun':'Sunday',
+        'focus.road':'Road Cleaning Routes','focus.waste':'Garbage Collection','focus.drain':'Drainage Maintenance','focus.mixed':'Mixed Operations','focus.events':'Event/Construction Support','focus.oncall':'On‑Call & Overflow','focus.readiness':'Readiness & Fleet Service',
+        'contact.title':'Request a Proposal','contact.lead':'Tell us about your scope and timelines. We’ll reply with a tailored plan and pricing.','contact.company':'Company','contact.email':'Email','contact.update':'(Additional contact details to be added.)','contact.pitch':'Looking for a reliable partner for municipal services? We’re ready to support your RFP.','contact.privacy':'By submitting, you consent to being contacted about your request. We respect your privacy.',
+        'form.name':'Full Name','form.email':'Email','form.scope':'Scope / Notes','form.submit':'Send Request',
+        'footer.rights':'All rights reserved.','footer.docs':'Download Capabilities Statement (PDF)'
+      },
+      sq: {
+        'nav.services':'Shërbimet','nav.about':'Rreth Nesh','nav.compliance':'Përputhshmëria','nav.schedule':'Orari','nav.contact':'Kontakti',
+        'cta.rfp':'Kërkoni Ofertë','cta.viewServices':'Shikoni Shërbimet',
+        'hero.badge':'Licencuar • Siguruar • Miqësore me mjedisin',
+        'hero.title':'Qytete të pastra, të sigurta dhe të qëndrueshme',
+        'hero.subtitle':'Pastrimi i rrugëve, grumbullimi i mbeturinave, mirëmbajtja e drenazhit dhe heqja e borës për bashki dhe objekte të mëdha.',
+        'stats.fast':'Reagim 24/7','stats.coverage':'Mbulesë në të gjithë qytetin','stats.safety':'Operacionet mbi sigurinë',
+        'services.title':'Shërbimet','services.lead':'Zgjidhje të qarta dhe të besueshme për performancë komunale dhe siguri publike.',
+        'services.road.badge':'Pastrimi i Rrugëve','services.road.title':'Fshesa Rrugore & Heqja e Mbetjeve','services.road.li1':'Fshesa me kapacitet të lartë reduktojnë pluhurin dhe ndotjen','services.road.li2':'Reagim i shpejtë për evente dhe kantiera','services.road.li3':'Mirëmbajtje e rregullt sipas orarit',
+        'services.waste.badge':'Asgjësimi i Mbeturinave','services.waste.title':'Grumbullim & Asgjësim i Qëndrueshëm','services.waste.li1':'Rrute komunale dhe ngritje të mëdha','services.waste.li2':'Ngarkesa të gjurmuara • zinxhir ruajtjeje','services.waste.li3':'Riciklim kur është e mundur',
+        'services.drain.badge':'Pastrimi i Drenazhit','services.drain.title':'Pusetat dhe kanalet','services.drain.li1':'Parandaloni përmbytjet me pastrim të planifikuar','services.drain.li2':'Auto‑vakum & hidro‑spërlarje','services.drain.li3':'Inspektim & raportim',
+        'services.snow.badge':'Heqja e Borës','services.snow.title':'Buldhozim, Kriposje & Trotuare','services.snow.li1':'Operacionet dimërore 24/7','services.snow.li2':'Rrute me prioritet për sigurinë','services.snow.li3':'Opsione shkrirjeje miqësore me mjedisin',
+        'about.title':'Rreth EcoRruga','about.p1':'Bashkëpunojmë me bashkitë dhe objektet e mëdha për operacione të besueshme dhe të shkallëzueshme. Ekipet tona janë të trajnuara dhe të pajisura sipas standardeve të sektorit publik.',
+        'about.p2':'Me seli në Ferizaj, Kosovë, operojmë me transparencë, telemetri moderne të flotës dhe përgjegjësi mjedisore.',
+        'about.kpi1':'Licencuar & Siguruar','about.kpi2':'Ekipe të certifikuara për siguri','about.kpi3':'Dokumentacion gati për tender',
+        'compliance.title':'Përputhshmëria & Kapacitetet','compliance.docs':'Dokumentacioni','compliance.fleet':'Flota & Pajisjet','compliance.process':'Procesi & Raportimi',
+        'compliance.li1':'Regjistrimi i biznesit & certifikatat tatimore','compliance.li2':'Sigurimi: përgjegjësi e përgjithshme & flota','compliance.li3':'Programi i Shëndetit & Sigurisë (HSE)','compliance.li4':'Fshesa • Auto‑vakum • Buldôzerë bore','compliance.li5':'Shpërndarës kripe • Hidro‑spërlarje','compliance.li6':'GPS & regjistra mirëmbajtjeje','compliance.li7':'Planifikim sipas SLA','compliance.li8':'Raporte ditore me foto','compliance.li9':'Protokolle reagimi për incidente',
+        'schedule.title':'Orari Operativ','schedule.lead':'Plani ynë javor standard (orare të personalizuara sipas kontratës).','schedule.day':'Dita','schedule.hours':'Orari','schedule.focus':'Fokusi kryesor',
+        'days.mon':'E Hënë','days.tue':'E Martë','days.wed':'E Mërkurë','days.thu':'E Enjte','days.fri':'E Premte','days.sat':'E Shtunë','days.sun':'E Diel',
+        'focus.road':'Rrute për pastrim rrugësh','focus.waste':'Grumbullim mbeturinash','focus.drain':'Mirëmbajtje drenazhi','focus.mixed':'Operacionet e kombinuara','focus.events':'Mbështetje evente/kantiere','focus.oncall':'Sipas thirrjes & mbingarkesë','focus.readiness':'Gatishmëri & shërbim flote',
+        'contact.title':'Kërkoni Ofertë','contact.lead':'Na tregoni për shtrirjen dhe afatet. Ne do t’ju kthehemi me plan dhe çmim.',
+        'contact.company':'Kompania','contact.email':'Email','contact.update':'(Të dhënat e tjera të kontaktit do të shtohen.)','contact.pitch':'Kërkoni partner të besueshëm për shërbime komunale? Jemi gati për tenderin tuaj.','contact.privacy':'Me dërgimin, pranoni të kontaktoheni për kërkesën tuaj. Respektojmë privatësinë tuaj.',
+        'form.name':'Emri i plotë','form.email':'Email','form.scope':'Përshkrimi / Shënime','form.submit':'Dërgo Kërkesën',
+        'footer.rights':'Të gjitha të drejtat të rezervuara.','footer.docs':'Shkarko Kapacitetet (PDF)'
+      }
+    };
+    function setLang(lang){
+      document.querySelectorAll('[data-i18n]').forEach(node=>{
+        const key=node.getAttribute('data-i18n');
+        node.textContent = (dict[lang] && dict[lang][key]) || node.textContent;
+      });
+      document.querySelectorAll('.i18n-switch').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+      document.documentElement.lang = lang;
+    }
+    document.querySelectorAll('.i18n-switch').forEach(btn=>btn.addEventListener('click',()=>setLang(btn.dataset.lang)));
+    // default to English
+    setLang('en');
+  </script>
+</body>
+</html>
